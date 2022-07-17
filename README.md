@@ -40,7 +40,7 @@ This project uses concept of Web-Scrapping using Python and Django.
 ## Technologies Used
 - Python
 - Django
-- Chron Job
+- Cron Job
 - MySQLite Database
 - HTML
 - CSS
@@ -48,4 +48,4 @@ This project uses concept of Web-Scrapping using Python and Django.
 
 ## Demo
 
-Watch project demo [here]().
+Watch project demo [here](https://youtu.be/2KqpjqUOAmU).
