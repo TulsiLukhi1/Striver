@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+	<link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+	<link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}"> 
+	<link rel="stylesheet" href="{% static 'https://unicons.iconscout.com/release/v4.0.0/css/line.css' %}">
+    <title>JobSeeker | Signup</title>
+	
+
+</head>
+<body>
+	<!-- <img src="{% static 'images/bg.png' %}"> -->
+	<div class="container">
+		<div class="forms">
+			<div class="form login">
+				<span class="title">Signup</span>
+				<form method="POST">
+					{% csrf_token %}
+					<div class="input-field">
+						{{form.username}}
+						<i class="fas fa-user-alt"></i>
+					</div>
+					<div class="input-field">
+						{{form.first_name}}
+						<i class="fas fa-user-alt"></i>
+					</div>
+					<div class="input-field">
+						{{form.last_name}}
+						<i class="fas fa-user-alt"></i>
+					</div>
+					<div class="input-field">
+						{{form.email}}
+						<i class="fa fa-envelope"></i>
+					</div>
+					<div class="input-field">
+						{{form.password1}}
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-eye-slash showhidepw"></i>
+					</div>
+					<div class="input-field">
+						{{form.password2}}
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-eye-slash showhidepw"></i>
+					</div>
+					{% if form.non_field_errors %}
+    					{% for error in form.non_field_errors %}
+  							<p class="error" style="color: red;">{{form.errors}}</p>
+  						{% endfor %}
+  					{% endif %}
+					
+					<div class="input-field button">
+						<input type="submit"  value="Register">
+					</div>
+				</form>
+				
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="https://kit.fontawesome.com/e81d17d39f.js" crossorigin="anonymous"></script>
+<script>
+	var form_fields = document.getElementsByTagName('input')
+	form_fields[1].placeholder = 'Enter your name';
+	form_fields[2].placeholder = 'Enter your first name';
+	form_fields[3].placeholder = 'Enter your last name';
+	form_fields[4].placeholder = 'Enter your email';
+	form_fields[5].placeholder = 'Enter your password';
+	form_fields[6].placeholder = 'confirm password';
+
+	for (var field in form_fields){
+		form_fields[field].className += 'form-control'
+	}
+</script>

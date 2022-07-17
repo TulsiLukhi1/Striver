@@ -2,6 +2,17 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 from bs4 import BeautifulSoup as bs
+from django.shortcuts import render
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User,auth
+from urllib3 import HTTPResponse
+from .forms import SignUpForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import messages
+from django.shortcuts import render,redirect, HttpResponseRedirect
+
+from .  models import SearchDetails
 
 # Create your views here.
 
@@ -13,7 +24,7 @@ def index(request):
 
         search_data=SearchDetails.objects.filter(username=user,search=search,siteurl=siteurl)
         if not search_data:
-            data = Search_details(
+            data = SearchDetails(
                 search=search,
                 username=user,
                 siteurl=siteurl
@@ -28,9 +39,6 @@ def index(request):
 
             req = requests.get(url)
             soup = bs(req.text,"html.parser")
-            
-            # alldata=soup.find_all('div',class_="individual_internship_header")
-
 
             header_data = soup.find_all('div',class_="individual_internship_header")
             job_data= soup.find_all('div',class_="individual_internship_details")
@@ -67,9 +75,9 @@ def index(request):
 
 
             total_div=len(job_titles_fun)
-            update_data=Update_details.objects.filter(search=search)
+            update_data=UpdateDetails.objects.filter(search=search)
             if not update_data:
-                data=Update_details(search=search,total_div=total_div)
+                data=UpdateDetails(siteurl=siteurl,search=search,total_div=total_div)
                 data.save()
             else:
                 if update_data[0].total_div != total_div :
@@ -86,6 +94,8 @@ def index(request):
 
         return render(request,'index.html',context)
 
+    elif siteurl=="https://www.techgig.com/jobs/":
+        return (request,'index.html',context)
     return render(request,'index.html')
 
 
@@ -98,3 +108,45 @@ def index(request):
 
 
     return render(request,'index.html')
+
+
+def user_login(request):
+    if request.method == "POST":
+        fm = AuthenticationForm(request=request, data=request.POST)
+        if fm.is_valid():
+            uname = fm.cleaned_data['username']
+            upass = fm.cleaned_data['password']
+            user = authenticate(username=uname, password=upass) 
+            if user is not None:
+                login(request, user)
+                return redirect('/')
+            messages.error(request,"Login Failed!! Please enter correct credentials :) ")
+    else:            
+        fm = AuthenticationForm()
+    return render(request, 'accounts/login.html',{'form':fm})
+
+
+
+
+def user_register(request):
+    if request.method == "POST":
+        fm = SignUpForm(request.POST)
+        print("int post");
+        if fm.is_valid():
+            messages.success(request, 'Account created Successfully!')
+            fm.save() 
+            print("fm.save()")
+            return render(request, 'accounts/login.html',{'form':fm})
+
+    else:
+        fm = SignUpForm()
+        print("in else")
+        return render(request, 'accounts/signup.html',{'form':fm})
+
+    print("it not in any condition")
+
+def user_logout(request):
+    auth.logout(request)
+    return redirect('login')
+
+

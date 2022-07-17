@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+	<link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+	<link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap' %}" rel="stylesheet"> 
+	<link rel="stylesheet" type="image/png" href="{% static 'https://unicons.iconscout.com/release/v4.0.0/css/line.css' %}">
+    <title>Login</title>
+	
+
+</head>
+<body>
+	<div class="container">
+		<div class="forms">
+			<div class="form login">
+				<span class="title">Login</span>
+				<form method="POST">
+					{% csrf_token %}
+					<div class="input-field">
+						<!-- <input type="text" placeholder="Enter your name" name="username" required> -->
+						{{form.username}}
+						<i class="fas fa-user-alt"></i>
+						<!-- <i class="uil uil-envelope"></i> -->
+					</div>
+					<div class="input-field">
+						<!-- <input type="password" placeholder="Enter your password" name="password" required> -->
+						{{form.password}}
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-eye-slash showhidepw"></i>
+						<!-- <i class="uil uil-lock icon"></i> -->
+					</div>
+					<div class="forget">
+						<a href="#" class="text">Forgot Password?</a>
+					</div>
+					{% if form.non_field_errors %}
+    					{% for error in form.non_field_errors %}
+  							<p class="error" style="color: red;">{{error}}</p>
+  						{% endfor %}
+  					{% endif %}
+					
+					<div class="input-field button">
+						<input type="submit"  value="Login">
+					</div>
+				</form>
+				<div class="login-signup">
+					<span class="text">Not a member?
+						<a href="user_register" class="text signup-text">Signup</a>
+					</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://kit.fontawesome.com/e81d17d39f.js" crossorigin="anonymous"></script>
+	<script>
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder = 'Enter your name';
+		form_fields[2].placeholder = 'Enter your password';
+
+		for (var field in form_fields){
+			form_fields[field].className += 'form-control'
+		}
+	</script>
+</body>
+</html>
