@@ -19,7 +19,7 @@ This project uses concept of Web-Scrapping using Python and Django.
 - Information from major websites 
 - Every three days mail
 
-##Procedure:
+## Procedure:
 1. Go to our website's home page
 2. Use the search bar to look for any job title.
 3. Select "Search"
