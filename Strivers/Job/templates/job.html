@@ -25,15 +25,29 @@
         <div class="column">
       
       
-          {% if job.companylogo == "noimage" %}
+          <!-- {% if job.companylogo == "noimage" %}
             {% load static %}
             <img src="{% static '/images/noimageavailable.jpeg' %}" alt="noimage" style="width:5%">
           {% else %}
             <img src="{{job.companylogo}}" alt="logo" style="width:5%">
-          {% endif %}
+          {% endif %} -->
       
           <div>
-            <a href="{{job.jobdetailurl}}" ><h3>{{job.jobtitle}}</h3></a>
+            <a href="{{job.jobdetailurl}}" >
+                <form method="POST" action="remove_job">
+
+                </form>
+                <div class="middle">
+                    <div class="card">
+                      <div class="h2">{{job.jobtitle}}</div>
+                      <div class="h3">{{job.company_name}}</div>
+                      <h4>{{job.location}}</h4>
+                      <!-- <div class="salary">&nbsp;&nbsp;&nbsp;<i class="fa fa-rupee"></i>&nbsp;&nbsp;&nbsp;50,000</div>
+                      <div class="skills">Skills: </div> -->
+                      <a href="remove">Remove</a>
+                    </div>
+                <div>
+            </a>
           </div>
       
         </div>

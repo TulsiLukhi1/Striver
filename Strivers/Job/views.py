@@ -183,3 +183,12 @@ def show_jobs(request):
     }
     return render(request,'job.html',context)
 
+
+def remove_job(request):
+    username=request.user
+    jobtitle = request.POST['title']
+
+    data=JobDetails.objects.filter(username=username,jobtitle=jontitle)
+    data.delete()
+    
+    return render(request,'job.html')
