@@ -16,18 +16,18 @@ This project uses concept of Web-Scrapping using Python and Django.
 - Every three days mail
 
 
-## Developed By
+## Developed By (Collabrators)
 
 - [Tulsi Lukhi](https://github.com/TulsiLukhi1)
-- [Krishna Chapla]()
-- [Isha Patel]()
+- [Krishna Chapla](https://github.com/PatelIshaR)
+- [Isha Patel](https://github.com/pjskrishna)
 - [Parangi Rathod](https://github.com/Parangi-27)
 
 
 ## Technologies Used
 - Python
 - Django
-- Cron Job
+- Chron Job
 - MySQL Database
 - HTML
 - CSS
