@@ -1,4 +1,3 @@
-
 # Strivers
 
 Nowadays, we have a tonne of tools available to us on the internet to remain relevant, but when it comes to finding a job, we are a little bit confused since we can't keep track of every website. If we don't know about every job website, we risk losing out on opportunities.
@@ -20,6 +19,16 @@ This project uses concept of Web-Scrapping using Python and Django.
 - Information from major websites 
 - Every three days mail
 
+##Procedure:
+1. Go to our website's home page
+2. Use the search bar to look for any job title.
+3. Select "Search"
+4. On that page, you will see information on related jobs from other companies.
+5. You can save jobs you're interested in for later access by selecting the Add option. Choose Jobs from the navigation bar.
+7. Check out your saved jobs
+8. Eliminate undesirable jobs by using the delete button
+9. You must sign in to our system in order to receive emails every three days.
+
 ## Developed By (Collabrators)
 
 - [Tulsi Lukhi](https://github.com/TulsiLukhi1)
@@ -40,4 +49,3 @@ This project uses concept of Web-Scrapping using Python and Django.
 ## Demo
 
 Watch project demo [here]().
-
