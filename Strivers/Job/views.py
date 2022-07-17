@@ -143,7 +143,7 @@ def user_logout(request):
 
 
 def add_job(request):
-    if request.method == 'POST':
+    # if request.method == 'POST':
         url = request.POST['url']
         title=request.POST['title']
         username = request.user
@@ -172,7 +172,6 @@ def add_job(request):
             }
             return render(request,'job.html',context)
 
-    return render(request,'job.html')
 
 
 def show_jobs(request):
@@ -190,5 +189,5 @@ def remove_job(request):
 
     data=JobDetails.objects.filter(username=username,jobtitle=jontitle)
     data.delete()
-    
+
     return render(request,'job.html')

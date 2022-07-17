@@ -211,30 +211,31 @@
           <form method="POST" action="add_jobs">
             {%csrf_token%}
 
-            <a hrf=""></a>
-            <div class="column">
-              <div class="card">
-                <div class="h2">{{company}}</div>
-                <h3>{{j_title}}</h3>
-                <h3>{{detail_url}}</h3>
-                <h3>{{location}}</h3>
-
-                <!-- <div class="salary">&nbsp;&nbsp;&nbsp;<i class="fa fa-rupee"></i>&nbsp;&nbsp;&nbsp;50,000</div>
-                <div class="skills">Skills: </div> -->
-               
-              <input type="hidden" id="url" value="{{detail_url}}" name="url">
-              <input type="hidden" id="title" value="{{j_title}}" name="title">
-              <input type="hidden" id="title" value="{{company}}" name="company">
-              <input type="hidden" id="title" value="{{location}}" name="location">
-
-              
-      
-      
-              <input type="submit" 
-              style="background-color: black; color:#ccc ;    width:10%" 
-              value="Add">
-      
-            </div>
+            <a href="{{detail_url}}">
+              <div class="column">
+                <div class="card">
+                  <div class="h2">{{company}}</div>
+                  <h3>{{j_title}}</h3>
+                  <h3>{{location}}</h3>
+  
+                  <!-- <div class="salary">&nbsp;&nbsp;&nbsp;<i class="fa fa-rupee"></i>&nbsp;&nbsp;&nbsp;50,000</div>
+                  <div class="skills">Skills: </div> -->
+                 
+                <input type="hidden" id="url" value="{{detail_url}}" name="url">
+                <input type="hidden" id="title" value="{{j_title}}" name="title">
+                <input type="hidden" id="title" value="{{company}}" name="company">
+                <input type="hidden" id="title" value="{{location}}" name="location">
+  
+                
+        
+        
+                <input type="submit" 
+                style="background-color: black; color:#ccc ;    width:10%" 
+                value="Add">
+        
+              </div>
+            </a>
+            
           </form>
         {% endfor %}
     </div>
