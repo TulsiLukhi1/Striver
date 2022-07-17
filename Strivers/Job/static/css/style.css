@@ -90,6 +90,7 @@ header .navbar-list li a{
   align-items: center;
   justify-content: center;
   margin-left: 75px;
+  /* display: flex; */
 }
 
 .select-box{
@@ -193,7 +194,14 @@ header .navbar-list li a{
   top: -30px;
 }
 
+
 /* CARD */
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+
 .card_container{
   display: inline-flex;
   justify-content: space-around;
@@ -243,11 +251,14 @@ a{
   color: white;
 }
 
+.ro
+
 .middle{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 150px 25px;
   gap: 11rem;
+  margin-bottom: 20px;
   
 }
 .card{
@@ -256,10 +267,12 @@ a{
   border-radius: 5px 15px;
   height: 280px;
   width: 450px;
-  margin-left:30px;
+  margin-left:50px;
   margin-right:30px;  
+  margin-bottom: 50px;
   padding: 10px;
 }
+
 .card a{
   background-color: black;
   padding: 15px 20px;
@@ -285,6 +298,11 @@ a{
 }
 .card a:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.card_link{
+  margin-bottom: 20px;
+  color: black;
 }
 
 /* On mouse-over, add a deeper shadow */

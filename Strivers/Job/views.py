@@ -185,9 +185,13 @@ def show_jobs(request):
 
 def remove_job(request):
     username=request.user
-    jobtitle = request.POST['title']
+    jobtitle = request.POST['jobtitle']
 
     data=JobDetails.objects.filter(username=username,jobtitle=jobtitle)
     data.delete()
 
-    return render(request,'job.html')
+    return redirect('job.html')
+
+
+def contactus(request):
+    return redirect('contactus')

@@ -20,40 +20,38 @@
 	{% include 'base.html' %}
 
 
-    <div class="middle">
+    <div class="row">
 
+        <!-- <div class="column"> -->
 
-
-        <div class="row">
           {% for job in job_data %} 
             <form method="POST" action="remove_job">
+
               {%csrf_token%}
-  
-              <a href="{{job.jobdetailurl}}">
-                <div class="column">
-                  <div class="card">
+            <div class="middle">
+              <a href="{{job.jobdetailurl}}" class="card_link">
+
+                <div class="card">
                     <!-- <h2>{{job.company_name}}</h2> -->
                     <h3>{{job.jobtitle}}</h3>
                     <!-- <h3>{{job.location}}</h3> -->
-                    <!-- <div class="salary">&nbsp;&nbsp;&nbsp;<i class="fa fa-rupee"></i>&nbsp;&nbsp;&nbsp;50,000</div>
-                    <div class="skills">Skills: </div> -->
-                   
+                    
                     <input type="hidden" id="title" value="{{job.jobtitle}}" name="title">
-             
-                  
-                  
           
                   
                   <input type="submit" 
                   style="background-color: black; color:#ccc ;    width:100%" 
                   value="Remove">
+                  
           
                 </div>
               </a>
-              
+            </div>
+
             </form>
           {% endfor %}
-      </div>
+        <!-- </div> -->
+    </div>
   
 	
 </body>
