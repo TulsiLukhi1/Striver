@@ -33,17 +33,17 @@ Since our website will email users within three days of any new updates, users a
 
 
 ## Prerequisite (requirement.txt)
-asgiref==3.5.2
-backports.zoneinfo==0.2.1
-beautifulsoup4==4.11.1
-certifi==2022.6.15
-charset-normalizer==2.1.0
-Django==4.0.6
-idna==3.3
-requests==2.28.1
-soupsieve==2.3.2.post1
-sqlparse==0.4.2
-urllib3==1.26.10
+- asgiref==3.5.2
+- backports.zoneinfo==0.2.1
+- beautifulsoup4==4.11.1
+- certifi==2022.6.15
+- charset-normalizer==2.1.0
+- Django==4.0.6
+- idna==3.3
+- requests==2.28.1
+- soupsieve==2.3.2.post1
+- sqlparse==0.4.2
+- urllib3==1.26.10
 
 ## Developed By (Collabrators)
 
