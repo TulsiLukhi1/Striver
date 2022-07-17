@@ -151,7 +151,7 @@ def add_job(request):
         job = JobDetails.objects.filter(username=username,jobdetailurl=url)
         print(job)
         if not job:
-            job_etail = JobDetails(
+            job_detail = JobDetails(
             username=username,
             jobdetailurl=url,
             jobtitle=title,
@@ -187,7 +187,7 @@ def remove_job(request):
     username=request.user
     jobtitle = request.POST['title']
 
-    data=JobDetails.objects.filter(username=username,jobtitle=jontitle)
+    data=JobDetails.objects.filter(username=username,jobtitle=jobtitle)
     data.delete()
 
     return render(request,'job.html')

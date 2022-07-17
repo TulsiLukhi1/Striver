@@ -208,7 +208,7 @@
 
       <div class="row">
         {% for j_title,company,detail_url,location in job_detail_list %} 
-          <form method="POST" action="add_jobs">
+          <form method="POST" action="add_job">
             {%csrf_token%}
 
             <a href="{{detail_url}}">

@@ -233,7 +233,9 @@ header .navbar-list li a{
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 
 }*/
-
+a{
+  text-decoration: none;
+}
 .select-box{
   align-items: center;
   justify-content: center;

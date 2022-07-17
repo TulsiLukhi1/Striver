@@ -15,8 +15,10 @@ urlpatterns = [
     path('register/',views.user_register,name='register'),
     path('login/',views.user_login,name='login'),
     path('logout/',views.user_logout,name='logout'),
-    path('add_job/',views.add_job,name='add_job/'),
-    path('job/',views.show_jobs,name='job/'),
+    path('add_job',views.add_job,name='add_job'),
+    #path('job/remove_job/',views.remove_job,name='remove_job'),
+    path('remove_job/',views.remove_job,name='remove_job'),
+    path('job/',views.show_jobs,name='job'),
 
     # path('add_jobs',views.add_jobs,name='add_jobs'),
     # path('jobs',views.show_jobs,name='jobs'),

@@ -28,7 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CRONJOBS = [
+    ('0 0 */3 * *', 'myapp.crone_automate_mail.send_mail')
+]
 # Application definition
 
 INSTALLED_APPS = [
