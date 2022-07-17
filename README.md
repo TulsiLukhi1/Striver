@@ -24,6 +24,15 @@ This project uses concept of Web-Scrapping using Python and Django.
 - [Parangi Rathod](https://github.com/Parangi-27)
 
 
+## Technologies Used
+- Python
+- Django
+- Cron Job
+- MySQL Database
+- HTML
+- CSS
+- JavaScript
+
 ## Demo
 
 Watch project demo [here]().
