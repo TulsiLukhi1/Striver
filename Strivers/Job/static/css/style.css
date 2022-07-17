@@ -1,0 +1,340 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    /* background-color: blanchedalmond; */
+}
+header{
+    height: 80px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    position: relative;
+}
+
+header .logo{
+    color: aliceblue;
+    font-size: 32px;
+    margin-left: 15em;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+header .navbar-list{
+    display: flex;
+    list-style: none;
+    margin-right: 28em;
+    position: relative;
+}
+
+header .navbar{
+    position: relative;
+}
+header .navbar-list li{
+    position: relative;
+    margin: 0 20px;
+}
+.active::after{
+    content: "";
+    position: absolute;
+    left:1%;
+    right: 1%;
+    bottom: -28px;
+    border: 2px solid blueviolet;
+    pointer-events: none;
+}
+
+.active a{
+    pointer-events: none;
+}
+
+header .navbar-list li a:hover::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left:1%;
+    right: 1%;
+    border: 2px solid blueviolet;
+    animation-name: navbar-ani;
+    animation-duration: 1s;
+}
+header .navbar-list li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    position: relative;
+    display: block;
+}
+
+.image{
+  width: 100%;
+  height: 500px;
+}
+
+/* CUSTOMIZED SEELECT */
+
+.overlap{
+  position: relative;
+}
+
+.search-fields{
+  align-items: center;
+  justify-content: center;
+  margin-left: 75px;
+}
+
+.select-box{
+  display: flex;
+  flex-direction: column;
+  width: 45em;
+  margin-left:30em;
+}
+
+.select-box .option-container{
+  /* background-color: rgb(20, 19, 19); */
+  background-color: rgb(27, 26, 26);
+  color: white;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all .6s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+  position: relative;
+  top: -30px;
+}
+/* .searcg-btn, */
+.selected{
+  /* top: -100px; */
+  background-color: black;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+  color: white;
+  order: 0;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  position: relative;
+  top: -30px;
+}
+
+
+
+.selected  .chevron-down{
+  /* position: absolute; */
+  height: 100%;
+  width: 32px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  transition: all .3s;
+}
+
+.select-box .option-container.active-category + .selected i{
+  transform: rotateX(180deg);
+  top: -6px;
+}
+
+.select-box .option-container.active-category{
+  max-height: 240px;
+  opacity: 1;
+  overflow-y: scroll;
+}
+.select-box .option-container::-webkit-scrollbar{
+  width: 8px;
+  background-color: black;
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .option-container::-webkit-scrollbar-thumb{
+  background-color: #525961;
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .option,
+.selected{
+  padding: 12px 12px;
+  cursor: pointer;
+}
+
+.select-box .option:hover{
+  background-color: black;
+}
+.select-box label{
+  cursor: pointer;
+}
+.select-box .option .radio{
+  display: none;
+}
+
+.search-heading{
+  display: flex;
+}
+
+.search-btn input{
+  background-color: black;
+  padding: 11px;
+  font-size: 14px;
+  color: white;
+  margin-left: 5px;
+  border-radius: 8px;
+  position: relative;
+  top: -30px;
+}
+
+/* CARD */
+.card_container{
+  display: inline-flex;
+  justify-content: space-around;
+  flex-direction: row;
+  /* position: relative; */
+}
+.card{
+  display: grid;
+  place-items: center;
+  /* position: relative; */
+  width: 255px;
+  height: 355px;
+  border-radius: 1em;
+  background: linear-gradient(50deg,#2a5a3b,#1e4886);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+/* ANIMATION */
+
+@keyframes navbar-ani {
+    0%{bottom:-10px}
+    100%{bottom: -28px;}
+}
+
+/****** CARD *******/
+/*
+.middle{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+}*/
+
+.select-box{
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: white;
+}
+
+.middle{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 150px 25px;
+  gap: 11rem;
+  
+}
+.card{
+  background: lightgray;
+  /* margin: 10px 15px; */
+  border-radius: 5px 15px;
+  height: 280px;
+  width: 450px;
+  margin-left:30px;
+  margin-right:30px;  
+  padding: 10px;
+}
+.card a{
+  background-color: black;
+  padding: 15px 20px;
+  color: white;
+  display: block;
+  margin: 100px 50px;
+  border-radius: 15px 5px;
+  text-decoration: none;
+}
+.middle .card .h2{
+  font-size: 30px;
+  text-align: left;
+}
+.middle .card .salary{
+  margin-left: -300px;
+  margin-top: 25px;
+}
+.middle .card .skills{
+  margin-left:-320px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+.card a:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/************ About Us *************/
+
+.aboutus h1{
+  margin-left: 45%;
+  margin-left: 45%;
+  margin-top: 100px;
+  font-size: 45px;
+  font-weight: 900;
+  /* width: 100%; */
+  align-items: center;
+  justify-content: center;
+}
+.aboutus .box{
+  padding: 25px;
+  margin-top: 100px;
+  align-items: center;
+  margin-left: 33%;
+  background-color: lightgrey;
+  color: #000;
+  justify-content: center;
+  position: absolute;
+  height: 500px;
+  width: 600px;
+  border-radius: 5px 10px;
+}
+
+.aboutus.box :hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/************ Contact Us  *************/
+.contactus h1{
+  margin-left: 45%;
+  margin-left: 45%;
+  margin-top: -500px;
+  font-size: 45px;
+  font-weight: 900;
+  /* width: 100%; */
+  align-items: center;
+  justify-content: center;
+}
+
+/* ANIMATION */
+
+@keyframes navbar-ani {
+    0%{bottom:-10px}
+    100%{bottom: -28px;}
+}
